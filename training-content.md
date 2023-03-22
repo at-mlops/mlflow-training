@@ -6,13 +6,15 @@ This document describes an idea of how to structure the mlflow training at [at]
 1. What is MLflow? Why do we use it?
    1. Relate to ML Lifecycle
    2. What are MLFlows main functionalities? (Short overview)
-      1. Theory
+      1. Theory MLflow
          1. MLflow Tracking
          2. MLflow Models
          3. MLflow Model Registry
          4. MLflow Projects
-      2. Hands-On
+      2. Theory Experiments & Runs
+      3. Hands-On
          1. Set up MLflow Experiment & Run
+
 2. MLFlow Tracking
    1. Theory
    2. Hands-on
@@ -32,3 +34,10 @@ This document describes an idea of how to structure the mlflow training at [at]
 ## MLFlow Projects
 
 [here](02-MLflow-Projects/Readme.md)
+
+
+# Open Questions
+
+* where to run mlflow?
+* where to run python scripts/ notebooks?
+
