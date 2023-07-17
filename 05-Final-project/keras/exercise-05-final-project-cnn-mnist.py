@@ -7,8 +7,10 @@ num_classes = 10
 input_shape = (28, 28, 1)
 
 # Load the data and split it between train and test sets
+print("Loading data...")
 (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
 
+print("Preprocessing...")
 # Scale images to the [0, 1] range
 x_train = x_train.astype("float32") / 255
 x_test = x_test.astype("float32") / 255
@@ -40,12 +42,14 @@ model = keras.Sequential(
 model.summary()
 
 batch_size = 128
-epochs = 15
+epochs = 15 # Decrease epochs for testing so the script runs faster. This will decrease model performance though
 
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
+print("Model training...")
 model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_split=0.1)
 
+print("Model evaluation...")
 score = model.evaluate(x_test, y_test, verbose=0)
 print("Test loss:", score[0])
 print("Test accuracy:", score[1])

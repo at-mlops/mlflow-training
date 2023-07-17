@@ -53,4 +53,4 @@ deactivate
 Please install MLflow locally using `pip install MLflow`. In case you have done the previous step on setting up your environment, you have already done this.
 Test whether it works by running `mlflow ui` and access the user interface via your browser under `localhost:5000`. In case you are running on Mac, your port 5000 is likely occupied (..by mac control center - wtf why is that listening to ports?...), so you need to run mlflow on another port. Try `mlflow ui -p 5008` for example. Keep in mind which port you choose as you need to set a tracking uri for MLflow during the later training steps.
 
-
+Abort running Mlflow by `ctrl-c`.

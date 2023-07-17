@@ -5,6 +5,7 @@ from sklearn import metrics
 from sklearn import svm
 
 # Load dataset
+print("Loading data...")
 cancer = datasets.load_breast_cancer()
 
 print("Features: ", cancer.feature_names)
@@ -30,9 +31,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 clf = svm.SVC(kernel="linear")  # Linear Kernel
 
 # Train the model using the training sets
+print("Model training...")
 clf.fit(X_train, y_train)
 
 # Predict the response for test dataset
+print("Model evaluation...")
 y_pred = clf.predict(X_test)
 
 # Model Accuracy: how often is the classifier correct?
