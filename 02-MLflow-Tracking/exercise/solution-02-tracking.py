@@ -1,4 +1,5 @@
 import os
+
 # TODO: import mlflow
 import mlflow
 
@@ -52,9 +53,11 @@ params = {"n_estimators": 4, "random_state": 42}
 # TODO: start autologging the upcoming run
 mlflow.sklearn.autolog()
 
-run_name = 'autologging model example'
+run_name = "autologging model example"
 with mlflow.start_run(run_name=run_name) as run:
-    rfr = RandomForestRegressor(**params).fit(np.array([[0, 1, 0], [0, 1, 0], [0, 1, 0]]), [1, 1, 1])
+    rfr = RandomForestRegressor(**params).fit(
+        np.array([[0, 1, 0], [0, 1, 0], [0, 1, 0]]), [1, 1, 1]
+    )
     print(f"run_id: {run.info.run_id}")
 
 # TODO: stop autologging the upcoming run

@@ -1,4 +1,3 @@
-
 # Import the sklearn models from MLflow
 import mlflow.sklearn
 from sklearn.ensemble import RandomForestRegressor
@@ -25,7 +24,6 @@ model_pred = model.predict(data)
 print(f"model_pred: {model_pred}")
 
 
-
 # -- MLflow Model Registry
 
 model_name = "sklearn-model-name"
@@ -49,17 +47,14 @@ print(f"model_pred: {model_pred}")
 
 
 # Transition the model to another stage
-from mlflow.client import MLflowClient 
+from mlflow.client import MLflowClient
+
 client = MlflowClient()
 
 # TODO: Transition the model to the stage "Production"
-stage = 'Staging'  # None, Production
+stage = "Staging"  # None, Production
 
-client.transition_model_version_stage(
-    name=model_name,
-    version=mv.version,
-    stage=stage
-)
+client.transition_model_version_stage(name=model_name, version=mv.version, stage=stage)
 
 # print registered models
 for rm in client.search_registered_models():

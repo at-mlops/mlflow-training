@@ -1,6 +1,6 @@
 import mlflow
 
-# TODO: Set the tracking URI to your http://127.0.0.1:PORT/ 
+# TODO: Set the tracking URI to your http://127.0.0.1:PORT/
 # (PORT is usually 5000)
 mlflow.set_tracking_uri("http://127.0.0.1:5000/")
 
@@ -11,8 +11,8 @@ mlflow.create_experiment(experiment_name)
 # TODO: Create two mlflow runs with different names within the previously created mlflow experiment
 # The first on is called: "logistic-regression"
 # The second one is called "support-vector-machine"
-run_name_lr="logistic-regression"
-run_name_svm="support-vector-machines"
+run_name_lr = "logistic-regression"
+run_name_svm = "support-vector-machines"
 
 # TODO: start your MLflow run for run_name_lr
 mlflow.start_run(run_name=run_name_lr)
