@@ -6,9 +6,9 @@ mlflow.set_tracking_uri("http://127.0.0.1:5000/")
 
 # TODO: Set your name and create a MLflow experiment
 experiment_name = "MLflow-training-YOUR-NAME"
-mlflow.create_experiment(experiment_name)
+mlflow.set_experiment(experiment_name)
 
-# TODO: Create two mlflow runs with different names within the previously created mlflow experiment
+# Create two mlflow runs with different names within the previously created mlflow experiment
 # The first on is called: "logistic-regression"
 # The second one is called "support-vector-machine"
 run_name_lr = "logistic-regression"

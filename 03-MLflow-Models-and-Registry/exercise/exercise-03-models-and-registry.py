@@ -1,6 +1,8 @@
 
 # Import the sklearn models from MLflow
 import mlflow.sklearn
+import mlflow
+from pprint import pprint
 from sklearn.ensemble import RandomForestRegressor
 run_name = "mlflow-models-and-registry"
 
@@ -37,11 +39,10 @@ print("Version: {}".format(mv.version))
 print("Stage: {}".format(mv.current_stage))
 
 
-import mlflow.pyfunc
 
 # TODO: modify the model_uri to load the model from the registry
 model_uri = f"{???}:/{???}/{mv.version}"
-model = mlflow.pyfunc.load_model(model_uri=model_uri)
+model = mlflow.sklearn.load_model(model_uri=model_uri)
 
 data = [[0, 1, 0]]
 model_pred = model.predict(data)
@@ -49,7 +50,7 @@ print(f"model_pred: {model_pred}")
 
 
 # Transition the model to another stage
-from mlflow.client import MLflowClient 
+from mlflow import MLflowClient 
 client = MlflowClient()
 
 # TODO: Transition the model to the stage "Production"
