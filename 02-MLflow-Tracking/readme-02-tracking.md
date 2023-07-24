@@ -9,7 +9,7 @@ The main reason to use MLflow Tracking is to log and store parameters and metric
 
 * *Parameters* represent the input parameters used for training, e.g. the initial learning rate. 
 * *Metrics* are used to track the progress of the model training and are usually updated over the course of a model run. 
-* *Tags* are further information that can be stored to identify the model, run, or else.
+* *Tags* are further information that can be stored to identify the model, run, etc.
 
 Parameters and metrics can be easily logged by calling `mlflow.log_param` and `mlflow.log_metric`. One can also specify a tag to identify the run by using `mlflow.set_tag`. Belows example show how to use each method within a run.
 

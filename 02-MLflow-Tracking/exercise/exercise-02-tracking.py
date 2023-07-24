@@ -2,10 +2,15 @@ import os
 # TODO: import mlflow
 # ???
 
+mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+# FIXME: if not set, it will log to a local file, instead of the remote tracking server.
+
 
 # -- Params
 # TODO log a learning_rate of 0.01
 # ???
+# FIXME: is it intentional that we do not create a new run and instead let log_param create one automatically? 
+
 
 params = {"epochs": 0.05, "final_activation": "sigmoid"}
 # TODO: log the above mentioned parameters to mlflow
@@ -19,7 +24,10 @@ params = {"epochs": 0.05, "final_activation": "sigmoid"}
 # TODO: Log a F-score of 0.7
 # ???
 
+# FIXME: why do we start a new run here?
 # TODO: log the following accuracies as metrics to your previously created "logistic-regression" run
+# FIXME: why do we start a new run here?
+mlflow.end_run() # FIXME: as one is already active (implicitly created by logging and tagging above) i first have to stop the run
 lr_run_id = "INSERT-RUN-ID"
 accuracy_list = [0.6, 0.6, 0.8, 0.9]
 # ???
@@ -45,6 +53,9 @@ with open(file_path, "w") as f:
 import mlflow.sklearn
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
+
+# FIXME: end previous runs
+mlflow.end_run()
 
 params = {"n_estimators": 4, "random_state": 42}
 

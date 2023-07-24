@@ -22,7 +22,7 @@ MLflow experiments are a part of MLflow’s tracking component that allow to gro
 ```python
 experiment_name = "introduction-experiment"
 
-# Create and experiment
+# Create an experiment
 mlflow.create_experiment(experiment_name)
 
 # Set an experiment, creates if none exists
@@ -53,7 +53,7 @@ with mlflow.start_run(run_name=run_name) as run:
 ```
 
 **Child runs**
-It is possible to create child runs of the current run based on the run ID. This can be used for example to gain a better overview of multiple run. Belows code shows how to create a child run.
+It is possible to create child runs of the current run based on the run ID. This can be used for example to gain a better overview of multiple runs. Belows code shows how to create a child run.
 
 ```python
 # Create child runs based on the run ID

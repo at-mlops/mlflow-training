@@ -22,12 +22,14 @@ run_name_svm="support-vector-machines"
 
 # TODO set the run to active and export it to the variable "run_lr"
 # ???
+run_lr = mlflow.active_run() #FIXME does not set to active, this is already done by create_run (wording of todo)
+
 
 print(f"Active run_id: {run_lr.info.run_id}")
 
 # TODO: end your MLflow run
 # ???
-
+# FIXME: this cell is no in the notebook
 
 # TODO: Now repeat the above steps to create the same for run_name_svm
 # export the active run to run_svm

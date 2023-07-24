@@ -4,6 +4,10 @@ import mlflow.sklearn
 import mlflow
 from pprint import pprint
 from sklearn.ensemble import RandomForestRegressor
+
+mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+# FIXME: if not set, it will log to a local file, instead of the remote tracking server.
+
 run_name = "mlflow-models-and-registry"
 
 # -- MLflow Models
@@ -50,7 +54,8 @@ print(f"model_pred: {model_pred}")
 
 
 # Transition the model to another stage
-from mlflow import MLflowClient 
+# from mlflow import MLflowClient 
+from mlflow.client import MlflowClient # FIXME: had to import it from mlflow.client
 client = MlflowClient()
 
 # TODO: Transition the model to the stage "Production"
