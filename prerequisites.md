@@ -9,7 +9,7 @@ Please clone the [MLflow training repository](https://github.com/at-mlops/mlflow
 
 ## Set-Up environment
 
-To set up you environment for the training, follow the following steps. The `requirements.txt` also includes mlflow and other packages relevant for the training.
+To set up you environment for the training, follow the following steps. The `requirements.txt` also includes mlflow and other packages relevant for the training. Please note that Python version >3.8 is required to run smoothly.
 
 ### unix/ macOS 
 ```bash

@@ -1,3 +1,5 @@
+# PLEASE RUN THE THE MLFLOW UI USING 'mlflow ui'
+
 # TODO: Import the MLflow package
 # ???
 
@@ -5,7 +7,7 @@
 # (PORT is usually 5000)
 # ???
 
-# TODO: Set your name and create a MLflow experiment
+# TODO: Set your name and create and set an MLflow experiment
 experiment_name = "MLflow-training-YOUR-NAME"
 # ???
 
