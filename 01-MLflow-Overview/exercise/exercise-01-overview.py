@@ -1,3 +1,4 @@
+# Important: The MLflow webserver needs to run so the API can log to the server. Otherwise it doesn't work.
 # PLEASE RUN THE THE MLFLOW UI USING 'mlflow ui'
 
 # TODO: Import the MLflow package

@@ -10,6 +10,7 @@ import mlflow
 
 Before we begin, we need to configure MLflow to log to a remote, or local, tracking server. This allows to manage results on in a central place and share them across a team. To get access to a tracking server it is needed to set a MLflow tracking URI. This can be done multiple way. Either by setting an environment variable `MLFLOW_TRACKING_URI` to the servers URI, or by adding it to the start of our code. We will do it manually here. If the tracking URI is not set, it will log to a local file instead of the remote tracking server.
 
+**Important:** The MLflow webserver needs to run so the API can log to the server. Otherwise it doesn't work.
 
 ```python
 # Log to localhost on PORT 5000

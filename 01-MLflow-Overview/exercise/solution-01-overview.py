@@ -1,3 +1,6 @@
+# Important: The MLflow webserver needs to run so the API can log to the server. Otherwise it doesn't work.
+# PLEASE RUN THE THE MLFLOW UI USING 'mlflow ui'
+
 import mlflow
 
 # TODO: Set the tracking URI to your http://127.0.0.1:PORT/
