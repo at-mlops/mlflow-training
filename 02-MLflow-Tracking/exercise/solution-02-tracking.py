@@ -3,6 +3,13 @@ import os
 # TODO: import mlflow
 import mlflow
 
+# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/ 
+# (PORT is usually 5000)
+mlflow.set_tracking_uri("http://127.0.0.1:5008")
+
+# TODO: Start a new mlflow run "mlflow-tracking"
+exercise_2_id = mlflow.set_experiment("exercise-02").experiment_id
+tracking_run_id = mlflow.start_run(run_name="mlflow-tracking").info.run_id
 
 # -- Params
 # TODO log a learning_rate of 0.01
@@ -20,14 +27,23 @@ mlflow.set_tags({"environment": "dev", "username": "sebastian-blum"})
 # TODO: Log a F-score of 0.7
 mlflow.log_metric("F-score", 0.7)
 
-# TODO: log the following accuracies as metrics to your logistic-regression run
-lr_run_id = "INSERT-RUN-ID"
+
+mlflow.end_run() # end the previous run to be able to start a new one
+
+# TODO: log the following accuracies as metrics to your logistic-regression run from the previous experiment
+# "introduction-set-experiment" with its run_id and experiment_id
+lr_run_id = "8f0a235faa504f9aa4780b85e3e2c54b"
+experiment_id = "180476663254369662"
+mlflow.set_experiment(experiment_id=experiment_id)
 accuracy_list = [0.6, 0.6, 0.8, 0.9]
 with mlflow.start_run(run_id=lr_run_id):
     for val_acc in accuracy_list:
-        mlflow.log_metric("val_acc", val_acc)
+        mlflow.log_metrics("val_acc", val_acc)
 
 # -- Artifacts
+mlflow.set_experiment(experiment_id=exercise_2_id)
+mlflow.start_run(run_id=tracking_run_id)
+
 # Create an example file output/test.txt
 file_path = "outputs/test.txt"
 if not os.path.exists("outputs"):
@@ -41,6 +57,9 @@ mlflow.log_artifact(local_path=file_path, artifact_path="data/subfolder")
 # TODO: get and print the URI where the artifacts have been logged to
 artifact_uri = mlflow.get_artifact_uri()
 print(artifact_uri)
+
+# End previous runs
+mlflow.end_run()
 
 
 # -- Autolog

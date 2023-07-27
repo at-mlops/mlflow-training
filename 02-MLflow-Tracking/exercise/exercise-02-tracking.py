@@ -2,14 +2,16 @@ import os
 # TODO: import mlflow
 # ???
 
-mlflow.set_tracking_uri("http://127.0.0.1:5000/")
-# FIXME: if not set, it will log to a local file, instead of the remote tracking server.
+# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/ 
+# (PORT is usually 5000)
+# ???
 
+exercise_2_id = mlflow.set_experiment("exercise-02").experiment_id
+tracking_run_id = mlflow.start_run(run_name="mlflow-tracking").info.run_id
 
 # -- Params
 # TODO log a learning_rate of 0.01
 # ???
-# FIXME: is it intentional that we do not create a new run and instead let log_param create one automatically? 
 
 
 params = {"epochs": 0.05, "final_activation": "sigmoid"}
@@ -24,16 +26,22 @@ params = {"epochs": 0.05, "final_activation": "sigmoid"}
 # TODO: Log a F-score of 0.7
 # ???
 
-# FIXME: why do we start a new run here?
-# TODO: log the following accuracies as metrics to your previously created "logistic-regression" run
-# FIXME: why do we start a new run here?
-mlflow.end_run() # FIXME: as one is already active (implicitly created by logging and tagging above) i first have to stop the run
+
+mlflow.end_run() # end the previous run to be able to start a new one
+
+# TODO: log the following accuracies as metrics to your logistic-regression run from the previous experiment
+# "introduction-set-experiment" with its run_id and experiment_id
 lr_run_id = "INSERT-RUN-ID"
+experiment_id = "INSERT-EXPERIMENT-ID"
 accuracy_list = [0.6, 0.6, 0.8, 0.9]
 # ???
 
 
 # -- Artifacts
+mlflow.set_experiment(experiment_id=exercise_2_id)
+mlflow.start_run(run_id=tracking_run_id)
+
+
 # Create an example file output/test.txt
 file_path = "outputs/test.txt"
 if not os.path.exists("outputs"):
@@ -47,15 +55,14 @@ with open(file_path, "w") as f:
 # TODO: get and print the URI where the artifacts have been logged to
 # ???
 
+# End previous runs
+mlflow.end_run()
 
 
 # -- Autolog
 import mlflow.sklearn
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
-
-# FIXME: end previous runs
-mlflow.end_run()
 
 params = {"n_estimators": 4, "random_state": 42}
 

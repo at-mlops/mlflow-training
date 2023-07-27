@@ -2,10 +2,10 @@ import mlflow
 
 # TODO: Set the tracking URI to your http://127.0.0.1:PORT/
 # (PORT is usually 5000)
-mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+mlflow.set_tracking_uri("http://127.0.0.1:5008/")
 
 # TODO: Set your name and create a MLflow experiment
-experiment_name = "MLflow-training-YOUR-NAME"
+experiment_name = "exercise-01.1-sebastian-blum"
 mlflow.set_experiment(experiment_name)
 
 # Create two mlflow runs with different names within the previously created mlflow experiment
@@ -33,8 +33,9 @@ print(f"Active run_id: {run_svm.info.run_id}")
 mlflow.end_run()
 
 # TODO: Set the experiment as active and export its experiment_id
-experiment_name = "introduction-set-experiment"
+experiment_name = "exercise-01.2-context-manager"
 mlflow_experiment_id = mlflow.set_experiment(experiment_name).experiment_id
+print(f"Experiment_id: {mlflow_experiment_id}")
 
 run_name = "context-manager-run"
 # TODO: run the mlflow run using the context manager. Export its run id as run_id

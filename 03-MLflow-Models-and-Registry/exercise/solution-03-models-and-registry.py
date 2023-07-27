@@ -4,6 +4,11 @@ import mlflow
 from pprint import pprint
 from sklearn.ensemble import RandomForestRegressor
 
+# TODO: Set the tracking URI to your http://127.0.0.1:PORT/
+# (PORT is usually 5000)
+mlflow.set_tracking_uri("http://127.0.0.1:5008/")
+
+mlflow.set_experiment("exercise-03")
 run_name = "mlflow-models-and-registry"
 
 
@@ -50,7 +55,7 @@ print(f"model_pred: {model_pred}")
 
 
 # Transition the model to another stage
-from mlflow import MLflowClient
+from mlflow.client import MlflowClient
 
 client = MlflowClient()
 

@@ -8,7 +8,7 @@
 # ???
 
 # TODO: Set your name and create and set an MLflow experiment
-experiment_name = "MLflow-training-YOUR-NAME"
+experiment_name = "exercise-01.1-YOUR-NAME"
 # ???
 
 
@@ -22,25 +22,24 @@ run_name_svm="support-vector-machines"
 # ???
 
 
-# TODO set the run to active and export it to the variable "run_lr"
+# TODO export the active run to the variable "run_lr"
 # ???
-run_lr = mlflow.active_run() #FIXME does not set to active, this is already done by create_run (wording of todo)
-
 
 print(f"Active run_id: {run_lr.info.run_id}")
 
 # TODO: end your MLflow run
 # ???
-# FIXME: this cell is no in the notebook
+
 
 # TODO: Now repeat the above steps to create the same for run_name_svm
 # export the active run to run_svm
 # ???
 
 
-# TODO: Set the experiment as active and export its experiment_id
-experiment_name = "introduction-set-experiment"
+# TODO: Set the experiment as active and export its experiment_id as "mlflow_experiment_id"
+experiment_name = "exercise-01.2-context-manager"
 # ???
+print(f"Experiment_id: {mlflow_experiment_id}")
 
 run_name = "context-manager-run"
 # TODO: run the mlflow run using the context manager. Export its run id as run_id
