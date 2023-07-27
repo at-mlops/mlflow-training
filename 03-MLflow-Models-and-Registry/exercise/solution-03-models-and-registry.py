@@ -44,7 +44,6 @@ print("Version: {}".format(mv.version))
 print("Stage: {}".format(mv.current_stage))
 
 
-
 # TODO: modify the model_uri to load the model from the registry
 model_uri = f"models:/{model_name}/{mv.version}"
 model = mlflow.sklearn.load_model(model_uri=model_uri)

@@ -1,8 +1,9 @@
 import os
+
 # TODO: import mlflow
 # ???
 
-# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/ 
+# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/
 # (PORT is usually 5000)
 # ???
 
@@ -27,7 +28,7 @@ params = {"epochs": 0.05, "final_activation": "sigmoid"}
 # ???
 
 
-mlflow.end_run() # end the previous run to be able to start a new one
+mlflow.end_run()  # end the previous run to be able to start a new one
 
 # TODO: log the following accuracies as metrics to your logistic-regression run from the previous experiment
 # "introduction-set-experiment" with its run_id and experiment_id
@@ -69,11 +70,12 @@ params = {"n_estimators": 4, "random_state": 42}
 # TODO: start autologging the upcoming run
 # ???
 
-run_name = 'autologging model example'
+run_name = "autologging model example"
 with mlflow.start_run(run_name=run_name) as run:
-    rfr = RandomForestRegressor(**params).fit(np.array([[0, 1, 0], [0, 1, 0], [0, 1, 0]]), [1, 1, 1])
+    rfr = RandomForestRegressor(**params).fit(
+        np.array([[0, 1, 0], [0, 1, 0], [0, 1, 0]]), [1, 1, 1]
+    )
     print(f"run_id: {run.info.run_id}")
 
 # TODO: stop autologging
 # ???
-

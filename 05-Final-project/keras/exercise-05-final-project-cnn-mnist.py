@@ -42,7 +42,7 @@ model = keras.Sequential(
 model.summary()
 
 batch_size = 128
-epochs = 15 # Decrease epochs for testing so the script runs faster. This will decrease model performance though
+epochs = 15  # Decrease epochs for testing so the script runs faster. This will decrease model performance though
 
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 

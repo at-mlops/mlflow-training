@@ -3,7 +3,7 @@ import os
 # TODO: import mlflow
 import mlflow
 
-# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/ 
+# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/
 # (PORT is usually 5000)
 mlflow.set_tracking_uri("http://127.0.0.1:5008")
 
@@ -28,7 +28,7 @@ mlflow.set_tags({"environment": "dev", "username": "sebastian-blum"})
 mlflow.log_metric("F-score", 0.7)
 
 
-mlflow.end_run() # end the previous run to be able to start a new one
+mlflow.end_run()  # end the previous run to be able to start a new one
 
 # TODO: log the following accuracies as metrics to your logistic-regression run from the previous experiment
 # "introduction-set-experiment" with its run_id and experiment_id
