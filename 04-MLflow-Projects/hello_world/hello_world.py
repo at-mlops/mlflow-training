@@ -31,6 +31,7 @@ def run(alpha, run_origin):
         metrics = [ Metric("m1",0.1,now,0), Metric("m2",0.2,now,0) ]
         tags = [ RunTag("tag1","hi1"), RunTag("tag2","hi2") ]
         client.log_batch(run.info.run_id, metrics, params, tags)
+        mlflow.end_run()
 
 if __name__ == "__main__":
     parser = ArgumentParser()
