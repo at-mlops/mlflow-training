@@ -9,6 +9,8 @@ mlflow.set_tracking_uri("http://127.0.0.1:5000/")
 # FIXME: if not set, it will log to a local file, instead of the remote tracking server.
 
 run_name = "mlflow-models-and-registry"
+experiment_name = "mlflow-models-and-registry"
+mlflow.set_experiment(experiment_name)
 
 # -- MLflow Models
 
