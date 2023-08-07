@@ -41,3 +41,4 @@ run_name = "context-manager-run"
 with mlflow.start_run(run_name=run_name) as run:
     run_id = run.info.run_id
     print(f"Active run_id: {run_id}")
+mlflow.end_run()

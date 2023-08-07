@@ -21,7 +21,7 @@ mlflow.set_tags({"environment": "dev", "username": "sebastian-blum"})
 mlflow.log_metric("F-score", 0.7)
 
 # TODO: log the following accuracies as metrics to your logistic-regression run
-lr_run_id = "INSERT-RUN-ID"
+lr_run_id = "488529c8b16a4f7784aeb3f32e3f63d9"
 accuracy_list = [0.6, 0.6, 0.8, 0.9]
 with mlflow.start_run(run_id=lr_run_id):
     for val_acc in accuracy_list:
