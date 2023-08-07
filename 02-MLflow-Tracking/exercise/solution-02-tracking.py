@@ -56,7 +56,7 @@ mlflow.sklearn.autolog()
 run_name = "autologging model example"
 with mlflow.start_run(run_name=run_name) as run:
     rfr = RandomForestRegressor(**params).fit(
-        np.array([[0, 1, 0], [0, 1, 0], [0, 1, 0]]), [1, 1, 1]
+        np.array([[0, 1, 0], [0, 1, 0], [0, 1, 0]]), np.array([1, 1, 1])
     )
     print(f"run_id: {run.info.run_id}")
 
