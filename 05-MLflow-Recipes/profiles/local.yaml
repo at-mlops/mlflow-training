@@ -1,0 +1,22 @@
+
+experiment:
+  name: "Regression-with-Recipe"
+  tracking_uri: "http://127.0.0.1:5000/"
+  artifact_location: "./metadata/mlflow/mlartifacts"
+
+model_registry:
+  uri: "http://127.0.0.1:5000/"
+  model_name: "Regression-recipe"
+
+INGEST_CONFIG:
+  using: "parquet" # csv, parquet, spark_sql, delta
+  location: "./data/sample.parquet"
+  #loader_method: load_file_as_dataframe
+
+INGEST_SCORING_CONFIG:
+  using: "parquet"
+  location: "./data/sample.parquet"
+
+PREDICT_OUTPUT_CONFIG:
+  using: parquet
+  location: "./data/sample_output.parquet"
