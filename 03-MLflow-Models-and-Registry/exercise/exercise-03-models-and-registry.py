@@ -11,6 +11,8 @@ from sklearn.ensemble import RandomForestRegressor
 
 mlflow.set_experiment("exercise-03")
 run_name = "mlflow-models-and-registry"
+experiment_name = "mlflow-models-and-registry"
+mlflow.set_experiment(experiment_name)
 
 # -- MLflow Models
 
