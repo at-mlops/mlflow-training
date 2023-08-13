@@ -10,3 +10,4 @@ If you want to participate in the training, please book your slot via Personio, 
 ## Contributing
 
 If you want to contribute to the training or give your feedback, please reach out to the MLOps Track or your trainers.
+
