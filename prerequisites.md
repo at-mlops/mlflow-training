@@ -29,7 +29,7 @@ python3 -m pip install -r requirements.txt
 deactivate
 ```
 
-### Windowns
+### Windows
 
 ```bash
 # Creating a virtual environment
