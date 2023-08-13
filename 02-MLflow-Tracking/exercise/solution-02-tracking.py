@@ -7,7 +7,8 @@ import mlflow
 # (PORT is usually 5000)
 mlflow.set_tracking_uri("http://127.0.0.1:5008")
 
-# TODO: Start a new mlflow run "mlflow-tracking"
+# TODO: Start a new mlflow run "mlflow-tracking" and export its run_id
+# IMPORTANT: Keep the naming of "exercise_2_id", and "tracking_run_id" as they are needed later
 exercise_2_id = mlflow.set_experiment("exercise-02").experiment_id
 tracking_run_id = mlflow.start_run(run_name="mlflow-tracking").info.run_id
 
@@ -20,7 +21,7 @@ params = {"epochs": 0.05, "final_activation": "sigmoid"}
 mlflow.log_params(params)
 
 # -- Tags
-# TODO: set an environment tag to dev and a username tag to your name
+# TODO: set an "environment" tag to "dev" and a "username" tag to "your name"
 mlflow.set_tags({"environment": "dev", "username": "sebastian-blum"})
 
 # -- Metrics
@@ -31,14 +32,14 @@ mlflow.log_metric("F-score", 0.7)
 mlflow.end_run()  # end the previous run to be able to start a new one
 
 # TODO: log the following accuracies as metrics to your logistic-regression run from the previous experiment
-# "introduction-set-experiment" with its run_id and experiment_id
-lr_run_id = "8f0a235faa504f9aa4780b85e3e2c54b"
-experiment_id = "180476663254369662"
+# "exercise-01.1-YOUR-NAME" with its run_id and experiment_id. HINT: Look also in the web UI
+lr_run_id = "58ac5e583fc14d5abeb560f91823f719"
+experiment_id = "726848279522163129"
 mlflow.set_experiment(experiment_id=experiment_id)
 accuracy_list = [0.6, 0.6, 0.8, 0.9]
 with mlflow.start_run(run_id=lr_run_id):
     for val_acc in accuracy_list:
-        mlflow.log_metrics("val_acc", val_acc)
+        mlflow.log_metric("val_acc", val_acc)
 
 # -- Artifacts
 mlflow.set_experiment(experiment_id=exercise_2_id)
@@ -56,7 +57,7 @@ mlflow.log_artifact(local_path=file_path, artifact_path="data/subfolder")
 
 # TODO: get and print the URI where the artifacts have been logged to
 artifact_uri = mlflow.get_artifact_uri()
-print(artifact_uri)
+print(f"Artifact_uri: {artifact_uri}")
 
 # End previous runs
 mlflow.end_run()
@@ -79,5 +80,5 @@ with mlflow.start_run(run_name=run_name) as run:
     )
     print(f"run_id: {run.info.run_id}")
 
-# TODO: stop autologging the upcoming run
+# TODO: stop autologging
 mlflow.sklearn.autolog(disable=True)

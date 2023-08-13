@@ -7,8 +7,10 @@ import os
 # (PORT is usually 5000)
 # ???
 
+# TODO: Start a new mlflow run "mlflow-tracking" and export its run_id
+# IMPORTANT: Keep the naming of "exercise_2_id", and "tracking_run_id" as they are needed later
 exercise_2_id = mlflow.set_experiment("exercise-02").experiment_id
-tracking_run_id = mlflow.start_run(run_name="mlflow-tracking").info.run_id
+# tracking_run_id = ???
 
 # -- Params
 # TODO log a learning_rate of 0.01
@@ -20,7 +22,7 @@ params = {"epochs": 0.05, "final_activation": "sigmoid"}
 # ???
 
 # -- Tags
-# TODO: set an environment tag to dev and a username tag to your name
+# TODO: set an "environment" tag to "dev" and a "username" tag to "your name"
 # ???
 
 # -- Metrics
@@ -31,7 +33,7 @@ params = {"epochs": 0.05, "final_activation": "sigmoid"}
 mlflow.end_run()  # end the previous run to be able to start a new one
 
 # TODO: log the following accuracies as metrics to your logistic-regression run from the previous experiment
-# "introduction-set-experiment" with its run_id and experiment_id
+# "exercise-01.1-YOUR-NAME" with its run_id and experiment_id. HINT: Look also in the web UI
 lr_run_id = "INSERT-RUN-ID"
 experiment_id = "INSERT-EXPERIMENT-ID"
 accuracy_list = [0.6, 0.6, 0.8, 0.9]
