@@ -1,13 +1,36 @@
-Sure, here's a brief description of each of the tools: 
+# Additional Components
 
-## MLFlow Serving
+Congratulations, you should know by now the fundamentals of MLflow and its main functionality. However, MLFlow is constantly in development and also offers a variety of other tools, some that just have been released.
 
-MLFlow Serving is a component of the MLFlow platform designed to streamline the deployment and serving of machine learning models. It provides a simple and efficient way to deploy models into production, allowing for easy integration with various deployment frameworks and cloud platforms. With MLFlow Serving, you can expose your trained models as RESTful API endpoints, making it straightforward to make predictions or inference calls from different applications and services. This tool enhances the model deployment process by providing versioning, scalability, and monitoring capabilities, making it easier for data scientists and engineers to transition from model development to real-world deployment.
+## MLflow Serving (part of MLflow Models)
 
-## MLFlow LLMs (Large Language Models)
+[MLFlow Serving](https://mlflow.org/docs/latest/models.html#mlflow-serving) is a component of the MLFlow platform designed to streamline the deployment and serving of machine learning models. It aims for an easy integration with various deployment frameworks and cloud platforms by easily serving models as RESTful API endpoints. This makes it straightforward to make predictions or inference calls from different applications and services to your MLflow Models.
 
-MLFlow LLMs is an extension of the MLFlow platform specifically designed to facilitate the management and deployment of large language models, such as those based on the GPT (Generative Pre-trained Transformer) architecture. With the rapid advancement of natural language processing, MLFlow LLMs aims to simplify the deployment of powerful language models by providing tools for model versioning, serving, and monitoring. This tool assists in handling the complexities associated with deploying large language models in production environments, ensuring efficient resource utilization, high performance, and ease of integration into various applications.
+For instance, you can deploy a trained image classification model and expose it as an API endpoint to classify images on-the-fly. MLFlow Serving offers versioning, scalability, and monitoring features, making it a seamless transition from development to deployment.
 
-## MLFlow Recipes
+```bash
+# serve local directory
+mlflow models serve -m my_directory_to_model 
 
-MLFlow Recipes is a component of the MLFlow platform focused on enabling the streamlined creation and sharing of data preprocessing and transformation workflows. It allows data scientists and engineers to encapsulate common data preparation tasks into reusable and customizable "recipes." These recipes can range from data cleaning and feature engineering to more complex data transformations. MLFlow Recipes promotes collaboration by allowing users to share, version, and reproduce these data transformation pipelines easily. By providing a standardized and organized approach to data preparation, MLFlow Recipes enhances the efficiency of the data science workflow and promotes best practices in data preprocessing.
+# or serve from model registry
+mlflow models serve --model-uri runs:/<run-id>/model --no-conda
+```
+
+
+## MLflow Recipes  (from v2.3.2)
+
+[MLFlow Recipes](https://mlflow.org/docs/latest/recipes.html) streamlines the creation and sharing of data preprocessing and transformation workflows. It allows data scientists and engineers to encapsulate common data preparation tasks into reusable and customizable "recipes." For example, you can create a recipe that performs data normalization and apply it to different datasets. These recipes can range from data cleaning and feature engineering to more complex data transformations and even training & tuning models. 
+It is previously known as MLflow Pipelines and has already been released as experimental from version 1.27.0 to 2.2.2.
+
+A detailed description can be found in this repository at [MLflow Recipes](./MLflow-Recipes.md)
+
+
+## MLflow LLM Tracking (Large Language Models) (from v2.3.2)
+
+[MLflow LLM Tracking](https://mlflow.org/docs/latest/llm-tracking.html) is an extension of the MLFlow platform specifically designed to facilitate the management and tracking of large language models, such as those based on the GPT (Generative Pre-trained Transformer) architecture. The Mlflow LLM Tracking component consists of two elements for logging and viewing the behavior of LLM’s. Firstly it is a set of APIs that allow for logging inputs, outputs, and prompts submitted and returned from LLM’s. Accompanying these APIs is a UI components that provides a simplified means of viewing the results of experimental submissions (prompts and inputs) and the results (LLM outputs).
+
+
+## MLflow API Gateway (from v2.5.0 experimental)
+
+The MLflow API Gateway service streamlines the utilization and oversight of various large language model (LLM) providers, like OpenAI and Anthropic, within organizations by offering a user-friendly interface for managing LLM-related requests through a unified endpoint. 
+It enhances security by centrally managing API keys, mitigating risks associated with key exposure. Its flexibility also allows easy adaptation and management of routes for different LLM providers, facilitating the integration of new providers without altering gateway-interfacing applications. 
