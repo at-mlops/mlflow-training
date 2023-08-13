@@ -134,3 +134,4 @@ mlruns
 **/mlruns
 **/mlartifacts
 **/outputs
+.DS_Store
