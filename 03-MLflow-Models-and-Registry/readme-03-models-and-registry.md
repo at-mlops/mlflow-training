@@ -93,7 +93,7 @@ Let's stage a model to `'Staging'`. The for-loop below prints all registered mod
 
 ```python
 # Transition the model to another stage
-from mlflow import MLflowClient 
+from mlflow.client import MLflowClient 
 from pprint import pprint
 
 client = MlflowClient()
@@ -110,3 +110,7 @@ client.transition_model_version_stage(
 for rm in client.search_registered_models():
     pprint(dict(rm), indent=4)
 ```
+
+> **_NOTE:_**  Above example uses the mlflow.client module. It provides a lower level API that directly translates to MLflow REST API calls for similar features of Experiments, Runs, Model Versions, and Registered Models
+
+
