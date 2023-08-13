@@ -6,7 +6,6 @@ Please follow the prerequiste steps in the given order and get back in case ther
 
 Please clone the [MLflow training repository](https://github.com/at-mlops/mlflow-training) to your local machine `git clone https://github.com/at-mlops/mlflow-training.git`. For the training itself you can user either a .ipynb or .py files. Please choose your preference and make sure you have a suitable IDE already installed.
 
-
 ## Set-Up environment
 
 To set up you environment for the training, follow the following steps. The `requirements.txt` also includes mlflow and other packages relevant for the training. Please note that Python version >3.8 is required to run smoothly.
@@ -25,7 +24,8 @@ which python
 # Installing packages
 python3 -m pip install -r requirements.txt
 
-# Leaving the virtual environment¶
+# Leaving the virtual environment
+# NOTE: obviously we want to keep it activated during the training
 deactivate
 ```
 
@@ -44,7 +44,8 @@ where python
 # Installing packages
 py -m pip install -r requirements.txt
 
-# Leaving the virtual environment¶
+# Leaving the virtual environment
+# NOTE: obviously we want to keep it activated during the training
 deactivate
 ```
 
