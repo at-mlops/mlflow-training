@@ -4,7 +4,7 @@
 # TODO: Import the MLflow package
 # ???
 
-# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/ 
+# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/
 # (PORT is usually 5000)
 # ???
 
@@ -23,7 +23,7 @@ run_name_svm="support-vector-machines"
 # ???
 
 
-# TODO export the active run to the variable "run_lr"
+# TODO  Export the active run ID to the variable "run_lr"
 # ???
 
 print(f"Active run_id: {run_lr.info.run_id}")

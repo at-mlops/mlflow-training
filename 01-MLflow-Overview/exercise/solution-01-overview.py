@@ -1,13 +1,14 @@
 # Important: The MLflow webserver needs to run so the API can log to the server. Otherwise it doesn't work.
 # PLEASE RUN THE THE MLFLOW UI USING 'mlflow ui'
 
+# TODO: Import the MLflow package
 import mlflow
 
-# TODO: Set the tracking URI to your http://127.0.0.1:PORT/
+# TODO: Set the tracking URI to your localhost ip http://127.0.0.1:PORT/
 # (PORT is usually 5000)
 mlflow.set_tracking_uri("http://127.0.0.1:5008/")
 
-# TODO: Set your name and create a MLflow experiment
+# TODO: Set your name and create and set an MLflow experiment
 experiment_name = "exercise-01.1-sebastian-blum"
 mlflow.set_experiment(experiment_name)
 
@@ -20,7 +21,7 @@ run_name_svm = "support-vector-machines"
 # TODO: start your MLflow run for run_name_lr
 mlflow.start_run(run_name=run_name_lr)
 
-# TODO set the run to active and export it to the variable "run_lr"
+# TODO  Export the active run ID to the variable "run_lr"
 run_lr = mlflow.active_run()
 
 print(f"Active run_id: {run_lr.info.run_id}")
@@ -35,7 +36,7 @@ run_svm = mlflow.active_run()
 print(f"Active run_id: {run_svm.info.run_id}")
 mlflow.end_run()
 
-# TODO: Set the experiment as active and export its experiment_id
+# TODO: Set the experiment as active and export its experiment_id as "mlflow_experiment_id"
 experiment_name = "exercise-01.2-context-manager"
 mlflow_experiment_id = mlflow.set_experiment(experiment_name).experiment_id
 print(f"Experiment_id: {mlflow_experiment_id}")
