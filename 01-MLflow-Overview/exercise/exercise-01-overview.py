@@ -26,7 +26,7 @@ run_name_svm="support-vector-machines"
 # TODO  Export the active run ID to the variable "run_lr"
 # ???
 
-print(f"Active run_id: {run_lr.info.run_id}")
+print(f"Active run_id for 'run_name_lr': {run_lr.info.run_id}")
 
 # TODO: end your MLflow run
 # ???
@@ -40,9 +40,9 @@ print(f"Active run_id: {run_lr.info.run_id}")
 # TODO: Set the experiment as active and export its experiment_id as "mlflow_experiment_id"
 experiment_name = "exercise-01.2-context-manager"
 # ???
-print(f"Experiment_id: {mlflow_experiment_id}")
+print(f"Experiment_id for 'exercise-01.2-context-manager': {mlflow_experiment_id}")
 
 run_name = "context-manager-run"
 # TODO: run the mlflow run using the context manager. Export its run id as run_id
 # ???
-    print(f"Active run_id: {run_id}")
+    print(f"Active run_id for 'context-manager-run': {run_id}")
