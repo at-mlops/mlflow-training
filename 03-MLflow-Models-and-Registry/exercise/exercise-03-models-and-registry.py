@@ -63,7 +63,7 @@ from mlflow.client import MlflowClient
 client = MlflowClient()
 
 # TODO: Transition the model to the stage "Production"
-stage = ???  # None, Staging, Production
+stage = ??? 
 
 client.transition_model_version_stage(
     name=model_name,

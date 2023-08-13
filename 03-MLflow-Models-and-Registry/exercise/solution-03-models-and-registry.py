@@ -54,12 +54,13 @@ print(f"model_pred: {model_pred}")
 
 
 # Transition the model to another stage
+# from mlflow import MLflowClient 
 from mlflow.client import MlflowClient
 
 client = MlflowClient()
 
 # TODO: Transition the model to the stage "Production"
-stage = "Staging"  # None, Production
+stage = "Production" # None, Staging, Production
 
 client.transition_model_version_stage(name=model_name, version=mv.version, stage=stage)
 
