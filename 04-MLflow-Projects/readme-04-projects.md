@@ -19,7 +19,7 @@ export MLFLOW_TRACKING_URI=http://localhost:5008
 There are different ways to run MLflow scripts. Of course, we can run it unmanaged as a plain python file using the command line.
 
 ```bash
-python hello_world.py
+python train.py
 ```
 
 Yet, keep in mind we need to set up a proper environment first, and also need to run the MLflow UI... How troublesome... MLFlow Projects are packaged code, they allow you to do everything with one simple command.
