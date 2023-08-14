@@ -30,7 +30,7 @@ A detailed description can be found in this repository at [MLflow Recipes](./MLf
 [MLflow LLM Tracking](https://mlflow.org/docs/latest/llm-tracking.html) is an extension of the MLFlow platform specifically designed to facilitate the management and tracking of large language models, such as those based on the GPT (Generative Pre-trained Transformer) architecture. The Mlflow LLM Tracking component consists of two elements for logging and viewing the behavior of LLM’s. Firstly it is a set of APIs that allow for logging inputs, outputs, and prompts submitted and returned from LLM’s. Accompanying these APIs is a UI components that provides a simplified means of viewing the results of experimental submissions (prompts and inputs) and the results (LLM outputs).
 
 
-## MLflow API Gateway (from v2.5.0 experimental)
+## MLflow AI Gateway (from v2.5.0 experimental)
 
-The MLflow API Gateway service streamlines the utilization and oversight of various large language model (LLM) providers, like OpenAI and Anthropic, within organizations by offering a user-friendly interface for managing LLM-related requests through a unified endpoint. 
+The MLflow AI Gateway service streamlines the utilization and oversight of various large language model (LLM) providers, like OpenAI and Anthropic, within organizations by offering a user-friendly interface for managing LLM-related requests through a unified endpoint. 
 It enhances security by centrally managing API keys, mitigating risks associated with key exposure. Its flexibility also allows easy adaptation and management of routes for different LLM providers, facilitating the integration of new providers without altering gateway-interfacing applications. 
