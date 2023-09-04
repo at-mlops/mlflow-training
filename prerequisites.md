@@ -12,6 +12,9 @@ To set up you environment for the training, follow the following steps. The `req
 
 ### unix/ macOS 
 ```bash
+# switch to the directory where you cloned the repository to
+cd mlflow-training
+
 # Creating a virtual environment
 python3 -m venv env
 
@@ -32,6 +35,9 @@ deactivate
 ### Windows
 
 ```bash
+# switch to the directory where you cloned the repository to
+cd mlflow-training
+
 # Creating a virtual environment
 py -m venv env
 
