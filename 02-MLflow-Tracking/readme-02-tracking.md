@@ -84,3 +84,10 @@ mlflow.sklearn.autolog(disable=True)
 ```
 
 Even though this is a very convenient feature, it is a good practice to log metrics manually, as this gives more control over a ML run.
+
+## Status and Lifecycle
+
+The "Status" information of a run represents if a run is running right now ("RUNNING") or whether it has successfully finished ("FINISHED") or not ("FAILED"/"KILLED").
+
+The "Lifecycle" info indicates if a run was deleted. Deletion can be done by running `mlflow.delete_run(run_id: str)`, however this is only a deletion marker and doesn't actually delete any data. For example, the UI has a filter button "Status" which can be set to "Deleted". Also, if you run MLflow as a local instance as we do in this tutorial, a `./mlruns` directory is created which stores data of all runs and `mlflow.delete_run()` doesn't delete any files from there.  
+To entirely remove "deleted" runs from your local MLflow setup, run the garbage collection command `MLFLOW_TRACKING_URI=http://localhost:5000 mlflow gc` (you may need to change the port) or simply delete the `./mlruns` folder.
