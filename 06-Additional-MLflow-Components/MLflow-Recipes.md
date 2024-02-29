@@ -1,3 +1,5 @@
+This is a copy of the [MLflow Recipes Regression Template](https://github.com/mlflow/recipes-regression-template/blob/main/README.md) found in the official mlflow repository.
+
 # MLflow Recipes Regression Template
 ## Table of contents
 - [Key Features](#key-features)
