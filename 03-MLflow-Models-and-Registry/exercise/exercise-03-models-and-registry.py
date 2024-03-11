@@ -44,7 +44,6 @@ model_name = "sklearn-model-name"
 mv = ???
 print("Name: {}".format(mv.name))
 print("Version: {}".format(mv.version))
-print("Stage: {}".format(mv.current_stage))
 
 
 
@@ -57,19 +56,15 @@ model_pred = model.predict(data)
 print(f"model_pred: {model_pred}")
 
 
-# Transition the model to another stage
-# from mlflow import MLflowClient 
+# Add alias and tag to registered model
 from mlflow.client import MlflowClient
 client = MlflowClient()
 
-# TODO: Transition the model to the stage "Production"
-stage = ??? 
+# TODO: Set alias of your choice for our registered model
+???
 
-client.transition_model_version_stage(
-    name=model_name,
-    version=mv.version,
-    ???
-)
+# TODO: Set model version tag of our model with key "run" and value "1"
+???
 
 # print registered models
 for rm in client.search_registered_models():

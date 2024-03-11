@@ -39,7 +39,7 @@ print(f"model_pred: {model_pred}")
 
 # MLflow Registry
 
-The MLflow Model Registry provides a central model store to manage the lifecycle of an ML Model. This allows to register MLflow models like the *RandomForestRegressor* from the previous section to the Model Registry and include model versioning, stage transitions, and annotations. In fact, by running `MLflow.sklearn.log_model` we already did exactly that. Look at how easy the MLflow API is to use. Let's have a look at the code again.
+The MLflow Model Registry provides a central model store to manage the lifecycle of an ML Model. This allows to register MLflow models like the *RandomForestRegressor* from the previous section to the Model Registry and include model versioning, tags and alias.
 
 ```python
 import mlflow.sklearn
@@ -72,10 +72,9 @@ Yet, it is also possible to register the MLflow model in the model registry by c
 mv = mlflow.register_model(model_uri, model_name)
 print("Name: {}".format(mv.name))
 print("Version: {}".format(mv.version))
-print("Stage: {}".format(mv.current_stage))
 ```
 
-Once registered to the model registry the model is versioned. This enables to load a model based on a specific version and to change a model version respectively. A registered model can be also modified to transition to another version or stage. Both use cases are shown in the example below.
+Once registered to the model registry the model is versioned. This enables to load a model based on a specific version and to change a model version respectively. Registered models can then be annotated with tags and aliases.
 
 ```python
 # Load model for prediction. Keep note that we now specified the model version.
@@ -89,22 +88,18 @@ model_pred = model.predict(data)
 print(f"model_pred: {model_pred}")
 ```
 
-Let's stage a model to `'Staging'`. The for-loop below prints all registered models and shows that there is indeed a model with a `'Staging'`-stage.
+Let's add an alias to our registered model next.
 
 ```python
-# Transition the model to another stage
 from mlflow.client import MLflowClient 
 from pprint import pprint
 
 client = MlflowClient()
 
-stage = 'Staging'  # None, Production
-
-client.transition_model_version_stage(
-    name=model_name,
-    version=mv.version,
-    stage=stage
-)
+# Add alias to model.
+# The set_registered_model_alias() method identifies a model
+# by its name and version which we can obtain from the ModelVersion object "mv".
+client.set_registered_model_alias(mv.name, "myalias", mv.version)
 
 # print registered models
 for rm in client.search_registered_models():
