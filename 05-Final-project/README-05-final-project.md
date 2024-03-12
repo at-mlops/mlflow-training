@@ -13,6 +13,8 @@ The first example implements a basic Keras Convolutional Neural Network on the M
 
 The second example implements a scikit based Support Vector Machine based on the breast cancer dataset. Its based on a [datacamp tutorial](https://www.datacamp.com/tutorial/svm-classification-scikit-learn-python), so if you are itnerested in it you can check it out of course.
 
-## Bonus Exercise
+## Bonus Exercise - Serving
 
-For all of you that got through this exercise at ease check out *MLflow Serving*. It's a part of MLflow Models and allows to package the MLModels to a ready-to-go deployment and even serves it. Check the documentation under [MLflow Models](https://mlflow.org/docs/2.5.0/models.html) and look for `mlflow models serve`.
+For all of you that got through this exercise at ease, try to *serve* your model with the `mlflow models serve` command. The goal is to have some API endpoint running which allows to run predictions on your model.
+
+For explanation how serving works, you can refer to our presentation or check the [documentation](https://mlflow.org/docs/2.10.2/cli.html#mlflow-models-serve).
