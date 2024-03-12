@@ -1,6 +1,6 @@
 # MLflow Projects
 
-MLflow Projects packages data science code in a standard format. This allows reusable, and reproducible code to share with other data scientists, and transfer it to production. A MLflow project might be a local directory or a Git repository. It uses a descriptor file to specify its dependencies and entrypoints.
+MLflow Projects packages data science code in a standard format. This allows reusable, and reproducible code to share with other data scientists, and transfer it to production. A MLflow project might be a local directory or a Git repository. At the core, MLflow Projects are just a convention for organizing and describing your code. It uses a descriptor file to specify its dependencies and entrypoints.
 
 ## Sklearn wine quality
 
