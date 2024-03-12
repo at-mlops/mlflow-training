@@ -1,4 +1,4 @@
-mlflow==2.5.0
+mlflow==2.10.2
 numpy==1.24.3
 # We can't use tensorflow-cpu because it's not available for Apple Silicon
 tensorflow==2.13.0
