@@ -33,10 +33,12 @@ params = {"epochs": 0.05, "final_activation": "sigmoid"}
 mlflow.end_run()  # end the previous run to be able to start a new one
 
 # TODO: log the following accuracies as metrics to your logistic-regression run from the previous experiment
-# "exercise-01.1-YOUR-NAME" with its run_id and experiment_id. HINT: Look also in the web UI
-lr_run_id = "INSERT-RUN-ID"
-experiment_id = "INSERT-EXPERIMENT-ID"
-accuracy_list = [0.6, 0.6, 0.8, 0.9]
+# "exercise-01.1-YOUR-NAME" with its run_id and experiment_id.
+# To get the id of experiment and run, you could use the UI in the browser.
+# Or you could try to get these ids programmatically here (hint: You'll need to search the runs of this experiment)
+lr_run_id = ???
+experiment_id = ???
+accuracy_list = [0.6, 0.6, 0.8, 0.9]  # Hint: Metrics do only accept a single float per metric
 # ???
 
 
