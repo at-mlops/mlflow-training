@@ -18,7 +18,6 @@ cd mlflow-training
 pip install --upgrade poetry 
 
 # create poetry env in project 
-poetry config virtualenvs.in-project true
 poetry install 
 
 # test venv 
@@ -26,7 +25,7 @@ poetry shell
 python src/mlflow_training/test_env.py
 ```
 
-Now you should be able to select the right kernel for your IDE and jupyter notebooks: `mlflow-training`
+Now you should be able to select the right kernel for your IDE and jupyter notebooks: `mlflow-training` or `.venv`
 
 ## Test MLflow installation
 
