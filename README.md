@@ -8,6 +8,18 @@ This repository contains the AT-internal Mlflow training materials. The training
 
 If you want to participate in the training, please book your slot via Personio, or just follow through on your own using the [how to train](./How-to-train.md) description.
 
+## Setup 
+
+This Training uses poetry to setup your environment. Please install as follows: 
+
+```shell 
+pip install --upgrade poetry 
+poetry config virtualenvs.in-project true
+poetry install 
+```
+
+Now you should be able to select the right kernel for your notebooks: "mlflow-training"
+
 ## Contributing
 
 If you want to contribute to the training or give your feedback, please reach out to the MLOps Track or your trainers.

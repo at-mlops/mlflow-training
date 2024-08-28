@@ -135,3 +135,5 @@ mlruns
 **/mlartifacts
 **/outputs
 .DS_Store
+models/*
+*.code-workspace
