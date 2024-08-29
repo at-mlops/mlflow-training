@@ -15,9 +15,6 @@ mlflow = "^2.15.1"
 scikit-learn = "^1.5.1"
 ipykernel = "^6.29.5"
 jupyterlab = "^4.2.5"
-#tensorflow-io-gcs-filesystem = "0.31.0"
-#tensorflow = "2.15.0"
-#tensorflow-intel = {version="^2.15.0", platform = "win32"}
 black = "^24.8.0"
 fastapi = "^0.112.2"
 
