@@ -29,6 +29,9 @@ poetry install
 # [Optional] for jupyter lab please install the kernel 
 poetry shell 
 python -m ipykernel install --user --name=mlflow-training
+
+# [Optional] you can access jupyter lab with the command 
+jupyter lab 
 ```
 
 Now you should be able to select the right kernel for your IDE and jupyter notebooks: `mlflow-training` or `.venv`
