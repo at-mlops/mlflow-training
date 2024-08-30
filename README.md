@@ -10,7 +10,7 @@ Please follow the prerequiste steps in the given order and get back in case ther
 
 ## Clone repository
 
-Please clone the [MLflow training repository](https://github.com/at-mlops/mlflow-training) to your local machine `git clone https://github.com/at-mlops/mlflow-training.git`. For the training itself you can user either a .ipynb or .py files. Please choose your preference and make sure you have a suitable IDE already installed.
+Please clone the [MLflow training repository](https://github.com/at-mlops/mlflow-training) to your local machine `git clone https://github.com/at-mlops/mlflow-training.git`. If you do not have any IDE installed or you do not work with an IDE that supports jupyter notebooks we preinstalled jupyter lab for you. 
 
 ## Set-Up environment
 
@@ -25,6 +25,10 @@ pip install --upgrade poetry
 
 # create poetry env in project 
 poetry install 
+
+# [Optional] for jupyter lab please install the kernel 
+poetry shell 
+python -m ipykernel install --user --name=mlflow-training
 ```
 
 Now you should be able to select the right kernel for your IDE and jupyter notebooks: `mlflow-training` or `.venv`
