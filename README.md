@@ -55,6 +55,8 @@ python src/mlflow_training/test_env.py
 
 You should see the message `everything looks good - setup finished!`
 
+If you are struggling with any of the exercises you can checkout the branch `solution` to get hints on how the exercises work. 
+
 # Contributing
 
 If you want to contribute to the training or give your feedback, please reach out to the MLOps Track or your trainers.
