@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "mlflow-training"
+version = "0.1.0"
+description = ""
+authors = ["florian.krempl <florian.krempl@alexanderthamm.com>", "Jahed Naghipoor <jahed.naghipoor@alexanderthamm.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "*", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+mlflow = "^2.15.1"
+scikit-learn = "^1.5.1"
+ipykernel = "^6.29.5"
+jupyterlab = "^4.2.5"
+black = "^24.8.0"
+fastapi = "^0.112.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
