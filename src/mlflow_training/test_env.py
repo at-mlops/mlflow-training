@@ -1,6 +1,6 @@
 import mlflow
 from sklearn.ensemble import RandomForestRegressor
-import fastapi
+from langchain_community.tools import WikipediaQueryRun
 
 
 def hello():

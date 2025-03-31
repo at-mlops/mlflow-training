@@ -11,12 +11,16 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.12"
-mlflow = "^2.15.1"
+mlflow = "^2.21.2"
 scikit-learn = "^1.5.1"
 ipykernel = "^6.29.5"
 jupyterlab = "^4.2.5"
 black = "^24.8.0"
-fastapi = "^0.112.2"
+langchain = "^0.3.21"
+langchain-openai = "^0.3.11"
+langchain-community = "^0.3.20"
+langgraph = "^0.3.20"
+wikipedia = "^1.4.0"
 
 [build-system]
 requires = ["poetry-core"]
